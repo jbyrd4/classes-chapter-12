@@ -11,7 +11,7 @@ namespace Classes
         public DateTime CreatedOn { get; }
 
         // Create a public property for holding a list of current employees
-        public List<Employee> Employees {get; set;}
+        public List<Employee> Employees { get; set; }
 
         /*
             Create a constructor method that accepts two arguments:
@@ -21,17 +21,17 @@ namespace Classes
             The constructor will set the value of the public properties
 
         */
-        public Company(string compName, DateTime compCreatedOn, List<Employee> compEmployees)
+        public Company(string compName, DateTime compCreatedOn)
         {
             Name = compName;
             CreatedOn = compCreatedOn;
-            Employees = compEmployees;
+            Employees = new List<Employee>();
         }
 
-        public void ListEmployees(Company company)
+        public void ListEmployees()
         {
-            foreach (Employee employee in company.Employees)
-            Console.WriteLine($"{employee.FirstName} {employee.LastName} works for {company.Name} as a {employee.Title} since {employee.StartDate}");
+            foreach (Employee employee in Employees)
+                Console.WriteLine($"{employee.FirstName} {employee.LastName} works for {Name} as a {employee.Title} since {employee.StartDate}");
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Classes
 {
@@ -8,7 +7,7 @@ namespace Classes
         static void Main(string[] args)
         {
             // Create an instance of a company. Name it whatever you like.
-            Company fancyCompany = new Company("Fancy Company", DateTime.Now, new List<Employee>());
+            Company fancyCompany = new Company("Fancy Company", DateTime.Now);
 
             // Create three employees
             Employee bobBaker = new Employee("Robert", "Baker", "Manager", DateTime.Now);
@@ -24,7 +23,7 @@ namespace Classes
                 Iterate the company's employee list and generate the
                 simple report shown above
             */
-            fancyCompany.ListEmployees(fancyCompany);
+            fancyCompany.ListEmployees();
         }
     }
 }
